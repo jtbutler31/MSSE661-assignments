@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/flexbox.css" />
+
+    <title>BDO Meal Cost Calculator</title>
+  </head>
+  <body>
+    
+    <div class="main wrapper">
+      <header>
+        <h1>
+          <a href="./home.html">BDO Meal Cost Calculator</a>
+        </h1>
+      </header>
+        <main>
+        <h2>
+          <p>Calpheon Meal</p>
+            <div style="padding: 20px;">
+            <form style="width: 50%;">
+              Bread Cost        : <input type="text" id="softBreadValue" /><br>
+              Milk Tea Cost          : <input type="text" id="milkTeaValue" /><br>
+              Fish Fillet Salad Cost : <input type="text" id="fishFilletSaladValue" /><br>
+              Cheese Pie Cost        : <input type="text" id="cheesePieValue" /><br>
+              Meat Pasta Cost        : <input type="text" id="meatPastaValue" /><br>
+              <input type="button" onClick="calpheonMeal()" Value="Calpheon Meal Cost" />
+            </form>
+            <p> The cost of the calpheon meal is : <br>
+            <span id="resultOne"></span>
+            </p>
+            </div>
+            <br>
+            <p>Balenos Meal</p>
+            <div style="padding: 20px;">
+            <form style="width: 50%;">
+              Cheese Gratin Cost         : <input type="text" id="cheeseGratinValue" /><br>
+              Meat Croquette Cost        : <input type="text" id="meatCroquetteValue" /><br>
+              Smoked Fish Steak Cost     : <input type="text" id="smokedFishSteakValue" /><br>
+              Stir Fried Vegetables Cost : <input type="text" id="stirFriedVegetablesValue" /><br>
+              Beer Cost                  : <input type="text" id="beerValue" /><br>
+              <input type="button"  onClick="balenosMeal()" Value="Balenos Meal Cost" />
+            </form>
+            <p> The cost of the balenos meal is : <br>
+            <span id="resultTwo"></span>
+            </p>
+            <br>
+            </form>
+            </div>
+          </h2>
+      </div>
+      </main>
+      <footer>
+        <p>Author: <a href="https://github.com/jtbutler31">Jason Butler</a></p>
+      </footer>
+    <script src="formulas.js"></script>  
+  </body>
+</html>
