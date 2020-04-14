@@ -11,12 +11,11 @@
 header {
   height: 50px;
   width: 100%;
-  background-color: lightgrey;
+  background-color: crimson;
 }
 
 li {
   padding: 0 10px;
-  width: 50px;
 }
 
 ul,
@@ -29,8 +28,9 @@ h2 {
 }
 
 footer {
+  display: flex;
+  justify-content: center;
   position: absolute;
   bottom: 0;
-  height: 100px;
   width: 100%;
 }

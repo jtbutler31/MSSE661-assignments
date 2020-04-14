@@ -1,11 +1,11 @@
 const connection = require('../db-config');
 const {
-  ALL_TASKS,
-  SINGLE_TASK,
-  INSERT_TASK,
-  UPDATE_TASK,
-  DELETE_TASK,
-} = require('../queries/tasks.queries');
+  ALL_BDOMEALS,
+  SINGLE_BDOMEAL,
+  INSERT_BDOMEAL,
+  UPDATE_BDOMEAL,
+  DELETE_BDOMEAL,
+} = require('../queries/bdomeals.queries');
 const query = require('../utils/query');
 
 /**
@@ -16,50 +16,40 @@ const query = require('../utils/query');
  * DELETE - Delete
  */
 
-// http://localhost:3000/tasks
-exports.getAllTasks = async (req, res) => {
+exports.getAllBdomeals = async (req, res) => {
   // establish connection
   const con = await connection().catch((err) => {
     throw err;
   });
 
-  // query all tasks
-  const tasks = await query(con, ALL_TASKS).catch((err) => {
+  const bdomeals = await query(con, ALL_BDOMEALS).catch((err) => {
     res.send(err);
   });
 
-  if (tasks.length) {
-    res.json(tasks);
+  if (bdomeals.length) {
+    res.json(bdomeals);
   }
 };
 
-// http://localhost:3000/tasks/1
-exports.getTask = async (req, res) => {
+exports.getBdomeal = async (req, res) => {
   // establish connection
   const con = await connection().catch((err) => {
     throw err;
   });
 
-  // query all task
-  const task = await query(con, SINGLE_TASK, [req.params.taskId]).catch(
+  const bdomeal = await query(con, SINGLE_BDOMEAL, [req.params.bdomealId]).catch(
     (err) => {
       res.send(err);
     }
   );
 
-  if (task.length) {
-    res.json(task);
+  if (bdomeal.length) {
+    res.json(bdomeal);
   }
 };
 
-// http://localhost:3000/tasks
-/**
- * POST request -
- * {
- *  name: 'A task name'
- * }
- */
-exports.createTask = async (req, res) => {
+
+exports.createBdomeal = async (req, res) => {
   // verify valid token
   const decoded = req.user; // {id: 1, iat: wlenfwekl, expiredIn: 9174323 }
 
@@ -70,8 +60,8 @@ exports.createTask = async (req, res) => {
       throw err;
     });
 
-    // query add task
-    const result = await query(con, INSERT_TASK, [req.body.name]).catch(
+  
+    const result = await query(con, INSERT_BDOMEAL, [req.body.name, req.body.silver_value]).catch(
       (err) => {
         res.send(err);
       }
@@ -79,30 +69,22 @@ exports.createTask = async (req, res) => {
     console.log(result);
 
     if (result.affectedRows === 1) {
-      res.json({ message: 'Added task successfully!' });
+      res.json({ message: 'Added bdomeal successfully!' });
     }
   }
 };
 
-// http://localhost:3000/tasks/1
-/**
- * PUT request -
- * {
- *  name: 'A task name',
- *  state: 'completed'
- * }
- */
-exports.updateTask = async (req, res) => {
+exports.updateBdomeal = async (req, res) => {
   // establish connection
   const con = await connection().catch((err) => {
     throw err;
   });
 
-  // query update task
-  const result = await query(con, UPDATE_TASK, [
+
+  const result = await query(con, UPDATE_BDOMEAL, [
     req.body.name,
-    req.body.status,
-    req.params.taskId,
+    req.body.silver_value,
+    req.params.bdomealId,
   ]).catch((err) => {
     res.send(err);
   });
@@ -112,15 +94,13 @@ exports.updateTask = async (req, res) => {
   }
 };
 
-// http://localhost:3000/tasks/1
-exports.deleteTask = async (req, res) => {
+exports.deleteBdomeal = async (req, res) => {
   // establish connection
   const con = await connection().catch((err) => {
     throw err;
   });
 
-  // query delete task
-  const result = await query(con, DELETE_TASK, [req.params.taskId]).catch(
+  const result = await query(con, DELETE_BDOMEAL, [req.params.bdomealId]).catch(
     (err) => {
       res.send(err);
     }

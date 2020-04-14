@@ -1,0 +1,16 @@
+.bdomeal-item-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .bdomeal-checkbox {
+    width: 25px;
+    display: flex;
+  }
+  
+  .bdomeal-name,
+  .bdomeal-silver_value {
+    width: 250px;
+  }

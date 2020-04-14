@@ -1,6 +1,6 @@
 const mysql = require('mysql');
 const { CREATE_USERS_TABLE } = require('./queries/user.queries');
-const { CREATE_TASKS_TABLE } = require('./queries/tasks.queries');
+const { CREATE_BDOMEALS_TABLE } = require('./queries/bdomeals.queries');
 const query = require('./utils/query');
 
 // Get the Host from Environment or use default
@@ -31,13 +31,13 @@ module.exports = async () =>
       }
     );
 
-    const tasksTableCreated = await query(con, CREATE_TASKS_TABLE).catch(
+    const bdomealsTableCreated = await query(con, CREATE_BDOMEALS_TABLE).catch(
       (err) => {
         reject(err);
       }
     );
 
-    if (!!userTableCreated && !!tasksTableCreated) {
+    if (!!userTableCreated && !!bdomealsTableCreated) {
       resolve(con);
     }
   });

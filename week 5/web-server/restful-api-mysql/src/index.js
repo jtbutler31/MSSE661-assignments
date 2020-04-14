@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 
 const authRoutes = require('./routes/auth.routes');
 const userRoutes = require('./routes/user.routes');
-const tasksRoutes = require('./routes/tasks.routes');
+const bdomealsRoutes = require('./routes/bdomeals.routes');
 const { error404, error500 } = require('./middleware/errors.middleware');
 
 const app = express();
@@ -14,7 +14,7 @@ const logLevel = process.env.LOG_LEVEL || 'dev';
 const env = process.env.NODE_ENV;
 
 // Middleware - logs server requests to console
-if (env !== 'test') {
+if (env != 'test') {
   app.use(logger(logLevel));
 }
 
@@ -32,7 +32,7 @@ app.use(cors());
 // Partial API endpoints
 app.use('/api/auth', authRoutes); // http://localhost:3000/api/auth
 app.use('/api/user', userRoutes); // http://localhost:3000/api/users
-app.use('/api/tasks', tasksRoutes); // http://localhost:3000/api/tasks
+app.use('/api/bdomeals', bdomealsRoutes); // http://localhost:3000/api/bdomeals
 
 // Handle 404 requests
 app.use(error404);

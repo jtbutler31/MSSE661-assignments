@@ -2,13 +2,15 @@ const chai = require('chai');
 const expect = chai.expect;
 const chaiHttp = require('chai-http');
 
+const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg2ODIxODMxLCJleHAiOjE1ODY5MDgyMzF9.1FOYaIJgwO4Tru39U4obbv7KqxmydTNNJikoQ7xBOCA';
+
 chai.use(chaiHttp);
 
 describe('Auth API service', () => {
   // run one time then skip once working
   it.skip('should POST a new user', (done) => {
     const testUser = {
-      username: 'admin',
+      username: 'admin2',
       password: 'password',
       email: 'admin@example.com',
     };

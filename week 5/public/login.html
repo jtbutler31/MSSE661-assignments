@@ -6,24 +6,25 @@
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/flexbox.css" />
     <link rel="stylesheet" href="./css/header.css" />
-    <link rel="stylesheet" href="./css/main.css" />
-    <title>Home</title>
+    <title>Login</title>
   </head>
   <body>
     <div class="main wrapper">
-      <header>
-        <nav>
-          <ul class="nav-list">
-            <li><a href="/">Home</a></li>
-            <li><a href="./about.html">About</a></li>
-            <a id= "logout" href="" onclick="doLogout(event)">Logout</a>
-          </ul>
-        </nav>
-      </header>
-
       <div class="content">
-        <div id="bdomeals">
-          <div>Loading...</div>
+        <div class="center">
+          <h2>Login</h2>
+          <form novalidate>
+            <label for="username">
+              <span>Username:</span>
+              <input id="username" type="text" placeholder="Username" />
+            </label>
+            <label for="password">
+              <span>Password:</span>
+              <input id="password" type="password" placeholder="Password" />
+            </label>
+            <button onclick="doLogin(event)">Submit</button>
+            <a href="./register.html">Register</a>
+          </form>
         </div>
       </div>
 
@@ -35,9 +36,6 @@
     <script src="./src/simple-storage.js"></script>
     <script src="./src/service-helpers.js"></script>
     <script src="./src/auth.service.js"></script>
-    <script src="./src/bdomeals.service.js"></script>
-    <script src="./src/route-guard.js"></script>
-    <script src="./src/build-bdomeals-list.js"></script>
     <script src="./src/app.js"></script>
   </body>
 </html>
