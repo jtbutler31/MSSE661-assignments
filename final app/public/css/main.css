@@ -1,0 +1,27 @@
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* css3 magic! */
+  }
+
+  }
+  .list-group-item {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .list-group-item span {
+    width: 200px;
+  }
+  
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .author {
+    margin-left: 24px;
+  }

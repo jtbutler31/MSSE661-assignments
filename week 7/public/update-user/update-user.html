@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <title>Welcome! | Jason's ToDo App</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"></a>
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./about.html">About</a>
+          </li>
+        </ul>
+        <a id="login" href="/login.html">Sign In</a>
+      </nav>
+    </header>
+
+    <div class="container-fluid">
+      <div class="center">
+        <h2>Welcome to Jason's ToDo app!</h2>
+      </div>
+    </div>
+    <button class="btn btn-info btn-lg" onclick="showForm(0)" type="button">Edit Password</button>
+    <div class="content" id="password-form" style="display: none;">
+        <form>
+            <div class="form-group">
+                <label for="password-n" class="form-label">New Password</label>
+                <input type="password" class="form-control" id="password-n" placeholder="new password" onfocus="this.placeholder = ''">
+            </div>
+
+            <button type="submit" class="btn btn-success btn-lg" onclick="doChangePassword(event)">Change Password</button>
+        </form>
+    </div>
+
+    <hr>
+
+    <button class="btn btn-info btn-lg" onclick="showForm(1)" type="button">Edit Username</button>
+    <div class="content" id="username-form" style="display: none;">
+        <form>
+            <div class="form-group">
+                <label for="username-n" class="form-label">New Username</label>
+                <input type="text" class="form-control" id="username-n" placeholder="new username" onfocus="this.placeholder = ''">
+            </div>
+
+            <button type="submit" class="btn btn-success btn-lg" onclick="doChangeUsername(event)">Change Username</button>
+        </form>
+    </div>
+    
+      <footer>
+        <p>Author: <a href="https://github.com/jtbutler31">Jason Butler</a></p>
+      </footer>
+    </div>
+
+    <script>
+        function showForm(n) {
+          const passwordForm = document.getElementById('password-form')
+          const usernameForm = document.getElementById('username-form');
+      
+            if(n === 0) {
+                if(passwordForm.style.display === "none") {
+                    passwordForm.style.display = "block";
+                } else {
+                    passwordForm.style.display = "none";
+                }
+            } else {
+                if(usernameForm.style.display === "none") {
+                    usernameForm.style.display = "block";
+                } else {
+                    usernameForm.style.display = "none";
+                }
+            }
+        }
+      </script>
+
+    <script src="../lib/api.config.js"></script>
+    <script src="../lib/simple-storage.js"></script>
+    <script src="../lib/service-helpers.js"></script>
+    <script src="../lib/auth.service.js"></script>
+    <script src="../lib/auth.js"></script>
+    <script src="../lib/auth.guard.js"></script>
+    <script src="/update-user/update-user-api.service.js"></script>
+    <script src="/update-user/update-user.service.js"></script>
+    <script src="/update-user/update-user.js"></script>
+    <script src="/update-user/app-update-user.js"></script>
+
+  </body>
+</html>
