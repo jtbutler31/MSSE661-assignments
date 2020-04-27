@@ -5,6 +5,6 @@ exports.CREATE_USERS_TABLE = `CREATE TABLE IF NOT EXISTS users(
     PRIMARY KEY (user_id)
   )`;
 
-exports.INSERT_NEW_USER = `INSERT INTO users (username, password) VALUES (?, ?, ?)`;
+exports.INSERT_NEW_USER = `INSERT INTO users (username, password) VALUES (?, ?)`;
 
 exports.UPDATE_USER = `UPDATE users SET username = ?, password = ? WHERE user_id = ?`;

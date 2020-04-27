@@ -8,6 +8,8 @@
         var meatPasta = parseFloat(document.getElementById("meatPastaValue").value);
         var calpheonValue = (2*softBread + milkTea + fishFilletSalad + cheesePie + meatPasta) / 2.5;
         document.getElementById("resultOne").innerHTML = calpheonValue;
+        var calpheonProfit = 1000000 - 18*calpheonValue;
+        document.getElementById("calpheonProfit").innerHTML = calpheonProfit;
       }
 
       function balenosMeal()
@@ -19,4 +21,6 @@
         var beer = parseFloat(document.getElementById("beerValue").value);
         var balenosValue = ( cheeseGratin  + meatCroquette + smokedFishSteak + 2*stirFriedVegetables + 2*beer) / 2.5;
         document.getElementById("resultTwo").innerHTML = balenosValue;
+        var balenosProfit = 1000000 - 24*balenosValue;
+        document.getElementById("balenosProfit").innerHTML = balenosProfit;
         }

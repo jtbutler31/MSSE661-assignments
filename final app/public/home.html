@@ -3,21 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/flexbox.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
 
-    <title>BDO Meal Cost Calculator</title>
+    <title>BDO Meal Calculator</title>
   </head>
   <body>
-    
-    <div class="main wrapper">
-      <header>
-        <h1>
-          <a href="./home.html">BDO Meal Cost Calculator</a>
-        </h1>
-      </header>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"></a>
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home</a>
+            <a id="logout" href="" onclick="doLogout(event)">Logout</a>
+          </li>
+        </ul>
+        
+      </nav>
+    </header>
+    <div id="page-container">
+      <div id="content wrap">
         <main>
         <h2>
+          <br>
+          <br>
           <p>Calpheon Meal</p>
             <div style="padding: 20px;">
             <form style="width: 50%;">
@@ -26,10 +42,15 @@
               Fish Fillet Salad Cost : <input type="text" id="fishFilletSaladValue" /><br>
               Cheese Pie Cost        : <input type="text" id="cheesePieValue" /><br>
               Meat Pasta Cost        : <input type="text" id="meatPastaValue" /><br>
-              <input type="button" onClick="calpheonMeal()" Value="Calpheon Meal Cost" />
+              <input type="button" onClick="calpheonMeal()" Value="Calpheon Meal Calculator" />
             </form>
             <p> The cost of the calpheon meal is : <br>
             <span id="resultOne"></span>
+            </p>
+            <br>
+            <p> The profit of the calpheon meal is : <br>
+            <span id="calpheonProfit"></span>
+            <br>
             </p>
             </div>
             <br>
@@ -41,20 +62,31 @@
               Smoked Fish Steak Cost     : <input type="text" id="smokedFishSteakValue" /><br>
               Stir Fried Vegetables Cost : <input type="text" id="stirFriedVegetablesValue" /><br>
               Beer Cost                  : <input type="text" id="beerValue" /><br>
-              <input type="button"  onClick="balenosMeal()" Value="Balenos Meal Cost" />
+              <input type="button"  onClick="balenosMeal()" Value="Balenos Meal Calculator" />
             </form>
             <p> The cost of the balenos meal is : <br>
             <span id="resultTwo"></span>
             </p>
             <br>
+            <p> The profit of the balenos meal is : <br>
+            <span id="balenosProfit"></span>
+            <br>
+            </p>
             </form>
             </div>
           </h2>
       </div>
       </main>
+    </div>
       <footer>
         <p>Author: <a href="https://github.com/jtbutler31">Jason Butler</a></p>
       </footer>
     <script src="formulas.js"></script>  
+    <script src="./src/api.config.js"></script> 
+    <script src="./src/simple-storage.js"></script>
+    <script src="./src/service-helpers.js"></script>
+    <script src="./src/auth.service.js"></script> 
+    <script src="./src/auth.js"></script> 
+    <script src="./src/auth-guard.js"></script>
   </body>
 </html>
